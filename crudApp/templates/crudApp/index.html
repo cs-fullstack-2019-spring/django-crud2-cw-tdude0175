@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<h1>
+    {% block header %}
+    CRUD Applications
+    {% endblock header%}
+</h1>
+{% block content %}
+<a href="{% url 'createUser' %}">New Contact?</a>
+
+{% for contact in contactList %}
+<p>{{ contact }}</p>
+<p>{{contact.email}}</p>
+<p>{{contact.phoneNumber}}</p>
+<p>
+<a href="{% url 'deleteUser' contact.id %}">Delete This user</a>
+</p>
+<p>
+<a href="{% url 'updateUser' contact.id %}">Update Info</a>
+</p>
+<hr/>
+{% endfor %}
+{% endblock content %}
+
+
+</body>
+</html>

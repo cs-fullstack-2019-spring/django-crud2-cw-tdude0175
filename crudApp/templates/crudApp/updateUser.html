@@ -1,0 +1,15 @@
+{% extends 'crudApp/index.html' %}
+
+
+{% block header %}
+update Information
+{% endblock header %}
+
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Submit</button>
+</form>
+{% endblock content %}

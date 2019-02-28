@@ -1,0 +1,14 @@
+{% extends 'crudApp/index.html' %}
+
+{% block header %}
+Shall we remove the evidence?
+{% endblock header %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    are you sure?
+    <input type="submit" value="yes">
+    <a href="{% url 'index' %}">No</a>
+</form>
+{% endblock content %}
